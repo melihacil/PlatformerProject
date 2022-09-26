@@ -23,6 +23,21 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool m_IsGrounded;
    
 
+
+    //To implement
+    //
+    /*
+     * Coyote time
+     * Jump Cut and other things for jumping
+     * Improve adding force (maxspeed , addspeedval)
+     * Improving ground check system so the player can jump a bit more higher(Getting input and jumping after pressed key)
+     * Double jump
+     * Maybe wall climb, hang or wall jumping
+     * A basic n++ like game with spikes death pits and other traps that will kill you
+     * MAYBE enemies and gun system but most likely nonýonýnnýnononoo
+     * SOISOISOISOISOISOISOISOISOI
+    */
+
     private void Awake()
     {
         m_RigidBody = GetComponent<Rigidbody2D>();
