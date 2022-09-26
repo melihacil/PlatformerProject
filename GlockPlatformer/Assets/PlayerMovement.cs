@@ -9,6 +9,10 @@ public class PlayerMovement : MonoBehaviour
     private PlayerInput m_PlayerInput;
     //private Vector2 moveSpeed;
 
+    private void Awake()
+    {
+        m_RigidBody = GetComponent<Rigidbody2D>();
+    }
     void Start()
     {
         m_PlayerInput = PlayerInput.Instance;
