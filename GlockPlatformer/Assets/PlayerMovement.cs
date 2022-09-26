@@ -11,6 +11,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask m_GroundLayer;
 
     [SerializeField] private float m_jumpForce;
+    [SerializeField] private float m_FallGravity;
+
+    private float m_NormalGravity;
+
 
     private PlayerInput m_PlayerInput;
     //private Vector2 moveSpeed;
@@ -22,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         m_RigidBody = GetComponent<Rigidbody2D>();
+        m_NormalGravity = m_RigidBody.gravityScale;
     }
     void Start()
     {
@@ -35,7 +40,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (m_RigidBody.velocity.y < 0)
+            m_RigidBody.gravityScale = m_FallGravity;
+        else
+            m_RigidBody.gravityScale = m_NormalGravity;
         m_IsGrounded = Physics2D.OverlapBox(m_GroundCheckTransform.position, m_GroundCheckSize, 0, m_GroundLayer);
+        if (!m_IsGrounded)
+        {
+            Debug.Log("Not Grounded");
+        }
         
     }
 
