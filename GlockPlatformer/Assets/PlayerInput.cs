@@ -1,0 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerInput : MonoBehaviour
+{
+    // Start is called before the first frame update
+
+    public PlayerInput Instance;
+
+    public float _horizontalInput {  get; private set; }
+    public float _verticalInput { get; private set; }
+
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        _horizontalInput = Input.GetAxisRaw("Horizontal");
+        _verticalInput = Input.GetAxisRaw("Vertical");
+    }
+
+}
