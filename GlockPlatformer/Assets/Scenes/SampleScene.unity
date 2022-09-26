@@ -516,6 +516,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   m_jumpForce: 3
+  m_FallGravity: 1.5
+  m_IsGrounded: 0
 --- !u!212 &1120891841
 SpriteRenderer:
   m_ObjectHideFlags: 0
