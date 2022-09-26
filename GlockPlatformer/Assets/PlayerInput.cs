@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     public static PlayerInput Instance { get; private set; }
 
     public float _horizontalInput {  get; private set; }
