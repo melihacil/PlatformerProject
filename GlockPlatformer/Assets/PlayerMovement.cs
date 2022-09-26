@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float m_jumpForce;
     [SerializeField] private float m_FallGravity;
-
+   
     private float m_NormalGravity;
 
 
@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     //private Vector2 moveSpeed;
 
 
-    private bool m_IsGrounded;
+    [SerializeField] private bool m_IsGrounded;
    
 
     private void Awake()
