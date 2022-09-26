@@ -11,6 +11,8 @@ public class PlayerInput : MonoBehaviour
     public float _horizontalInput {  get; private set; }
     public float _verticalInput { get; private set; }
 
+    public bool _jumpKey {  get; private set; }
+
 
     private void Awake()
     {
@@ -27,6 +29,9 @@ public class PlayerInput : MonoBehaviour
     {
         _horizontalInput = Input.GetAxisRaw("Horizontal");
         _verticalInput = Input.GetAxisRaw("Vertical");
+
+
+        _jumpKey = Input.GetButton("Jump") || Input.GetButtonDown("Jump");
     }
 
 }
