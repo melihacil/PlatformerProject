@@ -6,7 +6,7 @@ public class PlayerInput : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public PlayerInput Instance { get; private set; }
+    public static PlayerInput Instance { get; private set; }
 
     public float _horizontalInput {  get; private set; }
     public float _verticalInput { get; private set; }

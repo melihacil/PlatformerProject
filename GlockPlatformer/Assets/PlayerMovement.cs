@@ -1,13 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    private PlayerInput m_PlayerInput;
+
     void Start()
     {
-        
+        m_PlayerInput = PlayerInput.Instance;
+
+        if (m_PlayerInput != null)
+            Debug.Log("wow");
+        else
+            Debug.Log("Null");
     }
 
     // Update is called once per frame
