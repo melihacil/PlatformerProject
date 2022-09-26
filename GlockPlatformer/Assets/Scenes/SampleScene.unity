@@ -515,7 +515,7 @@ MonoBehaviour:
   m_GroundLayer:
     serializedVersion: 2
     m_Bits: 64
-  m_jumpForce: 10
+  m_jumpForce: 3
 --- !u!212 &1120891841
 SpriteRenderer:
   m_ObjectHideFlags: 0
