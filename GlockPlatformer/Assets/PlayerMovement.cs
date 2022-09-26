@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         m_IsGrounded = Physics2D.OverlapBox(m_GroundCheckTransform.position, m_GroundCheckSize, 0, m_GroundLayer);
         if (!m_IsGrounded)
         {
-            Debug.Log("Not Grounded");
+            //Debug.Log("Not Grounded");
         }
         
     }
