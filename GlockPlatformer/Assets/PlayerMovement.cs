@@ -6,8 +6,15 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Rigidbody2D m_RigidBody;
     [SerializeField] private float m_Speed;
+    [SerializeField] private float m_GroundCheckSize;
+    [SerializeField] private Transform m_GroundCheckTransform;
+    [SerializeField] private LayerMask m_GroundLayer;
+   
     private PlayerInput m_PlayerInput;
     //private Vector2 moveSpeed;
+
+
+    private bool m_IsGrounded;
 
     private void Awake()
     {
@@ -23,23 +30,25 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Null");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        m_IsGrounded = Physics2D.OverlapArea(m_GroundCheckTransform.position, )
     }
 
-
-
-
+    //Physic related stuff
+    //Movement jumping and other 
     private void FixedUpdate()
     {
+        JumpFunction();
         MovementFunction();
     }
 
 
 
+    private void JumpFunction()
+    {
 
+    }
     //Going to calculate needed force to adding speed 
     private void MovementFunction()
     {
