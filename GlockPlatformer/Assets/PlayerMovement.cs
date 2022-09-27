@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     //Coyote time
     [SerializeField] private float _coyoteTimeMax;
     [SerializeField] private float m_CoyoteTime;
-
+    private bool m_hasJumped;
     private PlayerInput m_PlayerInput;
     //private Vector2 moveSpeed;
 
@@ -64,16 +64,13 @@ public class PlayerMovement : MonoBehaviour
         else
             m_RigidBody.gravityScale = m_NormalGravity;
         m_IsGrounded = Physics2D.OverlapBox(m_GroundCheckTransform.position, m_GroundCheckSize, 0, m_GroundLayer);
+        m_CoyoteTime -= Time.deltaTime;
         if (m_IsGrounded)
         {
             //Debug.Log("Not Grounded");
             m_CoyoteTime = _coyoteTimeMax;
+            m_hasJumped = false;
         }
-        else
-        {
-            m_CoyoteTime -= Time.deltaTime;
-        }
-        
     }
 
     //Physic related stuff
@@ -88,9 +85,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void JumpFunction()
     {
-        if (m_CoyoteTime > 0f && m_PlayerInput._jumpKey)
+        if (m_CoyoteTime > 0f && m_PlayerInput._jumpKey && !m_hasJumped)
         {
             m_RigidBody.AddForce(Vector2.up * m_jumpForce, ForceMode2D.Impulse);
+            m_hasJumped = true;
         }
     }
     //Going to calculate needed force to adding speed 
