@@ -32,13 +32,16 @@ public class PlayerMovement : MonoBehaviour
     //To implement
     //
     /*
-     * Coyote time
-     * Jump Cut and other things for jumping
-     * Improve adding force (maxspeed , addspeedval)
+     * Coyote time                              -- Implemented possibly final 
+     * Jump Cut and other things for jumping    -- Implemented can be improved
+     * Improve adding force (maxspeed , addspeedval,acceleration, deceleration)    
      * Improving ground check system so the player can jump a bit more higher(Getting input and jumping after pressed key)
-     * Double jump
-     * Maybe wall climb, hang or wall jumping
+     * -- Implemented -- Can be improved
+     * Double jump --Scrapped
+     * Maybe wall climb, hang or wall jumping --Probably
      * A basic n++ like game with spikes death pits and other traps that will kill you
+     * Traps will definitely going to be added
+     * A timer which is also a health bar so player is forced to move
      * MAYBE enemies and gun system but most likely nonýonýnnýnononoo
      * SOISOISOISOISOISOISOISOISOI
     */
