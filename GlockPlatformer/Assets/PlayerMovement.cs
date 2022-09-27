@@ -79,8 +79,26 @@ public class PlayerMovement : MonoBehaviour
     {
         JumpFunction();
         MovementFunction();
+
+        if (!m_PlayerInput._jumpKey && m_hasJumped)
+        {
+            JumpCut();
+        }
+
+
     }
 
+
+    private void JumpCut()
+    {
+        if (m_RigidBody.velocity.y < 0)
+        {
+            m_RigidBody.AddForce(Vector2.down * )
+
+        }
+
+
+    }
 
 
     private void JumpFunction()
