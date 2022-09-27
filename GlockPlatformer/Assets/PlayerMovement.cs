@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask m_GroundLayer;
     //Coyote time
     [SerializeField] private float _coyoteTimeMax;
-    private float m_CoyoteTime;
+    [SerializeField] private float m_CoyoteTime;
 
     private PlayerInput m_PlayerInput;
     //private Vector2 moveSpeed;
@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            m_CoyoteTime -= Time.time;
+            m_CoyoteTime -= Time.deltaTime;
         }
         
     }
