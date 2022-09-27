@@ -12,8 +12,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float m_jumpForce;
     //Gravity
     [SerializeField] private float m_FallGravity;
-    [SerializeField] private float m_JumpCutForce;
-    private float m_NormalGravity;
+    [SerializeField] private float m_JumpCutMultiplier;
+
     [SerializeField] private Vector2 m_GroundCheckSize = new Vector2(0.5f, 0.5f);
     [SerializeField] private Transform m_GroundCheckTransform;
     [SerializeField] private LayerMask m_GroundLayer;
@@ -22,8 +22,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float m_CoyoteTime;
     private bool m_hasJumped;
     private PlayerInput m_PlayerInput;
+    private float m_NormalGravity;
     //private Vector2 moveSpeed;
-
 
     [SerializeField] private bool m_IsGrounded;
    
@@ -92,9 +92,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void JumpCut()
     {
-        if (m_RigidBody.velocity.y < 0)
+        if (m_RigidBody.velocity.y > 0)
         {
-            m_RigidBody.AddForce(Vector2.down * m_JumpCutForce);
+            m_RigidBody.AddForce(Vector2.down * m_RigidBody.velocity.y* m_JumpCutMultiplier, ForceMode2D.Impulse);
 
         }
     }
