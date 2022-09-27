@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float m_jumpForce;
     //Gravity
     [SerializeField] private float m_FallGravity;
+    [SerializeField] private float m_JumpCutForce;
     private float m_NormalGravity;
     [SerializeField] private Vector2 m_GroundCheckSize = new Vector2(0.5f, 0.5f);
     [SerializeField] private Transform m_GroundCheckTransform;
@@ -93,11 +94,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (m_RigidBody.velocity.y < 0)
         {
-            m_RigidBody.AddForce(Vector2.down * )
+            m_RigidBody.AddForce(Vector2.down * m_JumpCutForce);
 
         }
-
-
     }
 
 
