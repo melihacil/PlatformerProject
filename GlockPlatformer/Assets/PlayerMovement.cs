@@ -4,30 +4,48 @@ public class PlayerMovement : MonoBehaviour
 {
 
 
-    [SerializeField] private Rigidbody2D m_RigidBody;
-    [SerializeField] private float m_Speed;
+    private PlayerInput m_PlayerInput;
 
+    [SerializeField] private Rigidbody2D m_RigidBody;
+
+    [Header("Movement Related")]
+
+    [SerializeField] 
+    private float m_Speed;
+
+
+    [Header("Gravity Related")]
+
+    [SerializeField] 
+    private float m_FallGravity;
+    private float m_NormalGravity;
 
     [Header ("Jump Related")]
-    [SerializeField] private float m_jumpForce;
-    //Gravity
-    [SerializeField] private float m_FallGravity;
-    [SerializeField] private float m_JumpCutMultiplier;
 
-    [SerializeField] private Vector2 m_GroundCheckSize = new Vector2(0.5f, 0.5f);
-    [SerializeField] private Transform m_GroundCheckTransform;
-    [SerializeField] private LayerMask m_GroundLayer;
-    //Coyote time
-    [SerializeField] private float _coyoteTimeMax;
-    [SerializeField] private float m_CoyoteTime;
+    [SerializeField]
+    private float m_jumpForce;
+
+    [SerializeField]
+    private float m_JumpCutMultiplier;
+
     private bool m_hasJumped;
-    private PlayerInput m_PlayerInput;
-    private float m_NormalGravity;
-    //private Vector2 moveSpeed;
 
-    [SerializeField] private bool m_IsGrounded;
-   
+    [Header("Ground Check")]
+    [SerializeField] 
+    private Vector2 m_GroundCheckSize = new Vector2(0.5f, 0.5f);
+    [SerializeField] 
+    private Transform m_GroundCheckTransform;
+    [SerializeField] 
+    private LayerMask m_GroundLayer;
+    [SerializeField] 
+    private bool m_IsGrounded;
 
+    [Header("Coyote Time")]
+
+    [SerializeField] 
+    private float _coyoteTimeMax;
+    [SerializeField] 
+    private float m_CoyoteTime;
 
     //To implement
     //

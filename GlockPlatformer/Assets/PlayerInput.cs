@@ -20,10 +20,11 @@ public class PlayerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Getting inputs 
         _horizontalInput = Input.GetAxisRaw("Horizontal");
         _verticalInput = Input.GetAxisRaw("Vertical");
 
-
+        //Getting jump key as a bool 
         _jumpKey = Input.GetButton("Jump") || Input.GetButtonDown("Jump");
     }
 
