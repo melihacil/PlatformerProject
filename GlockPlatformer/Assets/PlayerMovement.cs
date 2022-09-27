@@ -16,8 +16,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Vector2 m_GroundCheckSize = new Vector2(0.5f, 0.5f);
     [SerializeField] private Transform m_GroundCheckTransform;
     [SerializeField] private LayerMask m_GroundLayer;
-
-
+    //Coyote time
+    [SerializeField] private float _coyoteTimeMax;
+    private float m_CoyoteTime;
 
     private PlayerInput m_PlayerInput;
     //private Vector2 moveSpeed;
@@ -63,9 +64,14 @@ public class PlayerMovement : MonoBehaviour
         else
             m_RigidBody.gravityScale = m_NormalGravity;
         m_IsGrounded = Physics2D.OverlapBox(m_GroundCheckTransform.position, m_GroundCheckSize, 0, m_GroundLayer);
-        if (!m_IsGrounded)
+        if (m_IsGrounded)
         {
             //Debug.Log("Not Grounded");
+            m_CoyoteTime = _coyoteTimeMax;
+        }
+        else
+        {
+            m_CoyoteTime -= Time.time;
         }
         
     }
@@ -82,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void JumpFunction()
     {
-        if (m_IsGrounded && m_PlayerInput._jumpKey)
+        if (m_CoyoteTime > 0f && m_PlayerInput._jumpKey)
         {
             m_RigidBody.AddForce(Vector2.up * m_jumpForce, ForceMode2D.Impulse);
         }
