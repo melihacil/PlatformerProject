@@ -6,14 +6,17 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Rigidbody2D m_RigidBody;
     [SerializeField] private float m_Speed;
-    [SerializeField] private Vector2 m_GroundCheckSize = new Vector2(0.5f,0.5f);
+
+
+    [Header ("Jump Related")]
+    [SerializeField] private float m_jumpForce;
+    //Gravity
+    [SerializeField] private float m_FallGravity;
+    private float m_NormalGravity;
+    [SerializeField] private Vector2 m_GroundCheckSize = new Vector2(0.5f, 0.5f);
     [SerializeField] private Transform m_GroundCheckTransform;
     [SerializeField] private LayerMask m_GroundLayer;
 
-    [SerializeField] private float m_jumpForce;
-    [SerializeField] private float m_FallGravity;
-   
-    private float m_NormalGravity;
 
 
     private PlayerInput m_PlayerInput;
