@@ -63,6 +63,8 @@ public class PlayerMovement : MonoBehaviour
      * Maybe wall climb, hang or wall jumping --Probably
      * A basic n++ like game with spikes death pits and other traps that will kill you
      * Traps will definitely going to be added
+     * 
+     * Need to add animations as a anim script with states and enums that can be changed easily 
      * A timer which is also a health bar so player is forced to move
      * MAYBE enemies and gun system but most likely nonýonýnnýnononoo
      * SOISOISOISOISOISOISOISOISOI
