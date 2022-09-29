@@ -512,7 +512,7 @@ MonoBehaviour:
   m_Speed: 10
   m_FallGravity: 1.5
   m_jumpForce: 3
-  m_JumpCutMultiplier: 0.5
+  m_JumpCutMultiplier: 1
   m_GroundCheckSize: {x: 0.5, y: 0.5}
   m_GroundCheckTransform: {fileID: 1811902002}
   m_GroundLayer:
