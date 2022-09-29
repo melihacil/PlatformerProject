@@ -47,6 +47,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] 
     private float m_CoyoteTime;
 
+
+
+    private bool _isLookingRight = true;
+    private bool _playerForward;
     //To implement
     //
     /*
@@ -68,6 +72,7 @@ public class PlayerMovement : MonoBehaviour
     {
         m_RigidBody = GetComponent<Rigidbody2D>();
         m_NormalGravity = m_RigidBody.gravityScale;
+        _playerForward = _isLookingRight;
     }
     void Start()
     {
@@ -113,6 +118,18 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
+
+    //Turning players forward
+    private void PlayerForward()
+    {
+        if (_isLookingRight != _playerForward)
+        {
+            _playerForward = _isLookingRight;
+            transform.forward *= -1;
+        }    
+    }
+
+
     private void JumpCut()
     {
         if (m_RigidBody.velocity.y > 0)
@@ -134,13 +151,12 @@ public class PlayerMovement : MonoBehaviour
     //Going to calculate needed force to adding speed 
     private void MovementFunction()
     {
-
-
+        if (m_PlayerInput._horizontalInput > 0)
+            _isLookingRight = true;
+        else if (m_PlayerInput._horizontalInput  < 0)
+            _isLookingRight = false;
 
         m_RigidBody.AddForce(Vector2.right * m_Speed * m_PlayerInput._horizontalInput);
-
-
-
     }
 
 
