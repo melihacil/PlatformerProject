@@ -93,6 +93,11 @@ public class PlayerMovement : MonoBehaviour
             m_CoyoteTime = _coyoteTimeMax;
             m_hasJumped = false;
         }
+        //Adding jump cut
+        if (!m_PlayerInput._jumpKey && m_hasJumped)
+        {
+            JumpCut();
+        }
     }
 
     //Physic related stuff
@@ -102,10 +107,7 @@ public class PlayerMovement : MonoBehaviour
         JumpFunction();
         MovementFunction();
 
-        if (!m_PlayerInput._jumpKey && m_hasJumped)
-        {
-            JumpCut();
-        }
+
 
 
     }
@@ -115,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (m_RigidBody.velocity.y > 0)
         {
-            m_RigidBody.AddForce(Vector2.down * m_RigidBody.velocity.y* m_JumpCutMultiplier, ForceMode2D.Impulse);
+            m_RigidBody.AddForce(Vector2.down * m_RigidBody.velocity.y * m_JumpCutMultiplier, ForceMode2D.Impulse);
 
         }
     }
