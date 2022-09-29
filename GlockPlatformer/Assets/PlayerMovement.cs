@@ -94,10 +94,7 @@ public class PlayerMovement : MonoBehaviour
             m_hasJumped = false;
         }
         //Adding jump cut
-        if (!m_PlayerInput._jumpKey && m_hasJumped)
-        {
-            JumpCut();
-        }
+
     }
 
     //Physic related stuff
@@ -108,7 +105,10 @@ public class PlayerMovement : MonoBehaviour
         MovementFunction();
 
 
-
+        if (!m_PlayerInput._jumpKey && m_hasJumped)
+        {
+            JumpCut();
+        }
 
     }
 
