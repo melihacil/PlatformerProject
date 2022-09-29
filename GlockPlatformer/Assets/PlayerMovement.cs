@@ -98,7 +98,10 @@ public class PlayerMovement : MonoBehaviour
             m_CoyoteTime = _coyoteTimeMax;
             m_hasJumped = false;
         }
-        //Adding jump cut
+
+
+        PlayerForward();
+
 
     }
 
@@ -109,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
         JumpFunction();
         MovementFunction();
 
-
+        //Adding jump cut
         if (!m_PlayerInput._jumpKey && m_hasJumped)
         {
             JumpCut();
